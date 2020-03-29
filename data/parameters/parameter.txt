@@ -1,1 +1,0 @@
-Iter: 36,	 alpha: 0.0205,	 beta: 0.002,	 dim: 100,	 window: 1,	 kns: 1

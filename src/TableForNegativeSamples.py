@@ -14,7 +14,7 @@ class TableForNegativeSamples:
         power = 0.75
         norm = sum([math.pow(t.count, power) for t in vocab])  # Normalizing constants
 
-        table_size = 1e5
+        table_size = 100000000
         table = np.zeros(table_size, dtype=np.int32)
 
         p = 0  # Cumulative probability

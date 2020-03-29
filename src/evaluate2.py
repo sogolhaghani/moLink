@@ -5,8 +5,6 @@ Modified on June 2, 2017
 @author: root
 '''
 import numpy as np
-# import matplotlib.pyplot as plt
-# from sklearn import metrics
 import activationFunction as af
 
 def test(param, test_file='validation', is_bias=True, is_filetered=False):

@@ -9,8 +9,8 @@ import networkx as nx
 
 def read_train():
     G = nx.DiGraph()
-    test_list = []
-    file_edges = open('/home/sogol/wspy/TestML1/data/wordnet/train.txt', 'r')
+    _list = []
+    file_edges = open('../data/wordnet/train.txt', 'r')
     for line in file_edges:
         tokens = line.split()
         if G.has_node(tokens[0]) is False:
@@ -18,11 +18,11 @@ def read_train():
         if G.has_node(tokens[2]) is False:
             G.add_node(tokens[2])
         G.add_edge(tokens[0], tokens[2], label=tokens[1], weight=0)
-        test_list.append(line.split())
-    return G, test_list
+        _list.append(line.split())
+    return G, _list
 
 def read_test():
-    f_test= open('/home/sogol/wspy/TestML1/data/wordnet/test.txt', 'r')
+    f_test= open('../data/wordnet/test.txt', 'r')
     test_list = []
     for line in f_test:
         test_list.append(line.split())
@@ -31,7 +31,7 @@ def read_test():
 
 
 def read_validation():
-    f_test= open('/home/sogol/wspy/TestML1/data/wordnet/dev.txt', 'r')
+    f_test= open('../data/wordnet/dev.txt', 'r')
     test_list = []
     for line in f_test:
         test_list.append(line.split())
