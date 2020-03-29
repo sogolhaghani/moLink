@@ -6,7 +6,6 @@ Modified on May 31, 2017
 
 import numpy as np
 import evaluate as e
-# import evaluate2 as e2
 import activationFunction as af
 import walk as w
 
@@ -24,8 +23,9 @@ def evaluation(param, test_file='validation'):
         acc = e.accuracy( param , test_file)
         print('Iteration %s, Accuracy: %s' %(param['iteration'] ,acc))
 
-    # elif param['evaluation_metric'] == 'mean_rank':
-    #     auc = e2.test(param, test_file='validation', is_filetered=False, is_bias=True)
+    elif param['evaluation_metric'] == 'mean_rank':
+        hits, top_hits, mean_rank = e.test(param, test_file='validation', is_filetered=False)
+        print('Iteration %s, mean_rank: %s, top_hits: %s, hits %s' %(param['iteration'] ,mean_rank, top_hits, hits))
 
 
 def moLink(param):
